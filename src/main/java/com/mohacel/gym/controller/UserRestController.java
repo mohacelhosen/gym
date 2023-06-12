@@ -14,6 +14,12 @@ public class UserRestController {
     @Autowired
     private UserServiceImpl service;
 
+    @GetMapping("/")
+    public ResponseEntity<String> welcome(){
+        String msg ="Welcome the world of Spring Boot by 😎Md.Mohacel Hosen \n 😇https://github.com/mohacelhosen";
+        return  new ResponseEntity<>(msg, HttpStatus.OK);
+    }
+
     //save the user info
     @PostMapping("/user")
     public ResponseEntity<String> userRegistration(@RequestBody UserDto user)  {
